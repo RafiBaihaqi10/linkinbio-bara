@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bara | Kata HRD</title>
+<meta name="description" content="Tips kerja dari sisi HRD. Lowongan, magang, dan CV, semua linknya di sini.">
+<meta property="og:title" content="Bara | Kata HRD">
+<meta property="og:description" content="Tips kerja dari sisi HRD. Lowongan, magang, dan CV, semua linknya di sini.">
+<meta property="og:image" content="bara.jpg">
+<meta name="theme-color" content="#B5533C">
+<link rel="icon" href="og-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --kertas: #F4EFE4;
+    --kertas-2: #EAE2D2;
+    --tinta: #2B2B2B;
+    --tinta-2: #5E574D;
+    --bata: #B5533C;
+    --bata-tua: #8E3B29;
+    --coral: #C9573C;
+    --salem: #D9775D;
+    --navy: #2C3550;
+    --hijau: #4E9A5B;
+    --kuning: #F2C14E;
+    --bayang: rgba(60, 35, 20, .22);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    min-height: 100vh;
+    background: var(--kertas);
+    color: var(--tinta);
+    font-family: Inter, system-ui, sans-serif;
+    font-weight: 500;
+    overflow-x: hidden;
+  }
+  /* serat kertas di seluruh halaman */
+  body::before {
+    content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 50;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .35 0 0 0 0 .25 0 0 0 0 .15 0 0 0 .5 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    opacity: .28; mix-blend-mode: multiply;
+  }
+
+  /* kepala: lembar bata dengan pinggir sobek */
+  .kepala {
+    position: relative;
+    background: var(--bata);
+    padding: 44px 16px 120px;
+    text-align: center;
+    isolation: isolate;
+    overflow: hidden;
+  }
+  .kepala::after {
+    content: ""; position: absolute; left: 0; right: 0; bottom: -1px; height: 44px;
+    background: var(--kertas);
+    -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 44' preserveAspectRatio='none'%3E%3Cpath d='M0 18 L14 12 L26 20 L41 9 L55 16 L68 7 L83 17 L97 11 L110 21 L126 10 L139 15 L152 6 L168 18 L181 12 L196 22 L210 9 L224 15 L238 8 L251 19 L266 11 L280 17 L293 6 L308 16 L321 10 L336 20 L350 9 L364 15 L379 7 L391 17 L400 12 L400 44 L0 44Z'/%3E%3C/svg%3E") center / 100% 100% no-repeat;
+            mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 44' preserveAspectRatio='none'%3E%3Cpath d='M0 18 L14 12 L26 20 L41 9 L55 16 L68 7 L83 17 L97 11 L110 21 L126 10 L139 15 L152 6 L168 18 L181 12 L196 22 L210 9 L224 15 L238 8 L251 19 L266 11 L280 17 L293 6 L308 16 L321 10 L336 20 L350 9 L364 15 L379 7 L391 17 L400 12 L400 44 L0 44Z'/%3E%3C/svg%3E") center / 100% 100% no-repeat;
+    filter: drop-shadow(0 -3px 2px var(--bayang));
+  }
+  /* lingkaran kertas di belakang kepala, seperti foto profil */
+  .kepala::before {
+    content: ""; position: absolute; z-index: -1;
+    width: 520px; height: 520px; border-radius: 50%;
+    left: 50%; top: -150px; transform: translateX(-50%);
+    background: var(--salem); opacity: .55;
+    box-shadow: 0 6px 18px rgba(0,0,0,.18);
+  }
+  .potong { position: absolute; z-index: -1; background: var(--bata-tua); opacity: .5; }
+  .potong.a { width: 90px; height: 90px; border-radius: 50%; left: 6%; top: 26px; }
+  .potong.b { width: 60px; height: 24px; border-radius: 4px; right: 9%; top: 60px; transform: rotate(-14deg); background: var(--kuning); opacity: .85; }
+  .potong.c { width: 22px; height: 22px; right: 18%; top: 150px; transform: rotate(20deg); background: var(--kertas); opacity: .7; }
+
+  .profil { max-width: 480px; margin: 0 auto; }
+  .avatar {
+    position: relative; width: 148px; height: 148px; margin: 0 auto 18px;
+  }
+  .avatar::before { /* lapisan kertas di belakang foto */
+    content: ""; position: absolute; inset: -9px; border-radius: 50%;
+    background: var(--kertas); transform: rotate(-4deg) translate(3px, 2px);
+    box-shadow: 0 8px 0 -2px var(--bata-tua), 0 14px 22px rgba(0,0,0,.28);
+  }
+  .avatar img {
+    position: relative; width: 100%; height: 100%; border-radius: 50%; object-fit: cover; display: block;
+    animation: napas 4s ease-in-out infinite;
+  }
+  @keyframes napas { 50% { transform: translateY(-3px) rotate(-1deg); } }
+
+  h1 {
+    font-family: "Archivo Black", Impact, sans-serif; font-weight: 400;
+    font-size: clamp(30px, 8.5vw, 40px); line-height: 1.05; color: var(--kertas);
+    letter-spacing: .5px;
+    text-shadow: 0 3px 0 var(--bata-tua);
+  }
+  h1 .garis { color: var(--kuning); margin: 0 .12em; }
+  .handle {
+    display: inline-block; margin-top: 12px; padding: 6px 14px 7px;
+    background: var(--navy); color: var(--kertas); border-radius: 999px;
+    font-weight: 700; font-size: 15px; text-decoration: none;
+    transform: rotate(-2deg);
+    box-shadow: 0 3px 0 rgba(0,0,0,.25);
+  }
+  .bio {
+    margin: 16px auto 0; max-width: 330px; color: var(--kertas); font-size: 15px; line-height: 1.5; font-weight: 600;
+  }
+
+  /* daftar link */
+  main { max-width: 480px; margin: -64px auto 0; padding: 0 16px 40px; position: relative; z-index: 2; }
+  .link {
+    position: relative; display: flex; align-items: center; gap: 14px;
+    margin-bottom: 18px; padding: 16px 18px; min-height: 72px;
+    background: #FBF8F1; color: var(--tinta); text-decoration: none;
+    border-radius: 6px;
+    box-shadow: 0 5px 0 -1px var(--kertas-2), 0 5px 0 0 rgba(0,0,0,.08), 0 10px 18px var(--bayang);
+    transform: rotate(var(--r, 0deg));
+    transition: transform .18s ease, box-shadow .18s ease;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .link:nth-child(odd) { --r: -.6deg; }
+  .link:nth-child(even) { --r: .5deg; }
+  .link:hover, .link:focus-visible {
+    transform: rotate(0deg) translateY(-3px);
+    box-shadow: 0 8px 0 -1px var(--kertas-2), 0 8px 0 0 rgba(0,0,0,.08), 0 16px 24px var(--bayang);
+    outline: none;
+  }
+  .link:active { transform: translateY(2px); box-shadow: 0 2px 0 -1px var(--kertas-2), 0 6px 10px var(--bayang); }
+  .link:focus-visible { box-shadow: 0 0 0 3px var(--navy), 0 16px 24px var(--bayang); }
+  .ikon {
+    flex: none; width: 44px; height: 44px; border-radius: 50%;
+    display: grid; place-items: center; background: var(--warna, var(--navy));
+    box-shadow: 0 3px 0 rgba(0,0,0,.18);
+  }
+  .ikon svg { width: 22px; height: 22px; fill: none; stroke: var(--kertas); stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+  .teks { flex: 1; min-width: 0; }
+  .judul { display: block; font-weight: 700; font-size: 16px; line-height: 1.25; }
+  .sub { display: block; margin-top: 3px; font-size: 13px; color: var(--tinta-2); line-height: 1.35; }
+  .panah { flex: none; width: 18px; height: 18px; stroke: var(--tinta-2); stroke-width: 2.4; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+
+  /* link unggulan: kartu bata dengan selotip dan stiker */
+  .link.utama {
+    background: var(--coral); color: var(--kertas); padding-top: 24px; padding-bottom: 22px;
+    box-shadow: 0 6px 0 -1px var(--bata-tua), 0 12px 22px var(--bayang);
+  }
+  .link.utama:hover, .link.utama:focus-visible { box-shadow: 0 9px 0 -1px var(--bata-tua), 0 18px 26px var(--bayang); }
+  .link.utama .judul { font-family: "Archivo Black", Impact, sans-serif; font-weight: 400; font-size: 19px; letter-spacing: .2px; }
+  .link.utama .sub { color: #FBE9DF; }
+  .link.utama .ikon { background: var(--kertas); }
+  .link.utama .ikon svg { stroke: var(--coral); }
+  .link.utama .panah { stroke: var(--kertas); }
+  .selotip {
+    position: absolute; top: -11px; left: 50%; width: 86px; height: 22px; transform: translateX(-50%) rotate(-3deg);
+    background: rgba(242, 226, 180, .82); box-shadow: 0 1px 2px rgba(0,0,0,.15);
+  }
+  .stiker {
+    position: absolute; top: -14px; right: -6px;
+    background: var(--kuning); color: var(--tinta);
+    font-family: "Archivo Black", Impact, sans-serif; font-size: 12px; letter-spacing: .4px;
+    padding: 6px 10px; border-radius: 4px; transform: rotate(6deg);
+    box-shadow: 0 3px 0 rgba(0,0,0,.18);
+  }
+
+  .label {
+    margin: 30px 4px 14px; font-family: "Archivo Black", Impact, sans-serif; font-size: 13px;
+    letter-spacing: 1.5px; color: var(--bata);
+    display: flex; align-items: center; gap: 10px;
+  }
+  .label::after { content: ""; flex: 1; height: 3px; background: var(--kertas-2); border-radius: 2px; }
+
+  footer { text-align: center; padding: 8px 16px 36px; color: var(--tinta-2); font-size: 13px; line-height: 1.6; }
+  footer a { color: var(--tinta); font-weight: 700; text-decoration: none; }
+
+  /* muncul berurutan seperti kertas ditempel */
+  h1 .kata, h1 .garis { display: inline-block; }
+  @media (prefers-reduced-motion: no-preference) {
+    /* animasi buka: lembar-lembar kertas ditempel satu per satu */
+    .kepala { animation: turun .55s cubic-bezier(.3, 1.2, .5, 1) backwards; }
+    .kepala::before { animation: tumbuh .8s .15s cubic-bezier(.2, 1.3, .4, 1) backwards; }
+    .potong.a { animation: lempar .6s .35s cubic-bezier(.2, 1.5, .4, 1) backwards; --dx: -80px; --dy: -60px; }
+    .potong.b { animation: lempar .6s .5s cubic-bezier(.2, 1.5, .4, 1) backwards; --dx: 90px; --dy: -40px; }
+    .potong.c { animation: lempar .6s .62s cubic-bezier(.2, 1.5, .4, 1) backwards; --dx: 70px; --dy: 40px; }
+    .avatar { animation: jatuh .7s .25s cubic-bezier(.25, 1.6, .45, 1) backwards; }
+    .avatar::before { animation: putar .7s .3s cubic-bezier(.2, 1.4, .4, 1) backwards; }
+    .avatar img { animation: napas 4s 1.2s ease-in-out infinite; }
+    h1 .k1 { animation: kata .5s .55s cubic-bezier(.2, 1.6, .4, 1) backwards; --rr: -12deg; }
+    h1 .garis { animation: kata .4s .68s cubic-bezier(.2, 1.6, .4, 1) backwards; --rr: 0deg; }
+    h1 .k2 { animation: kata .5s .76s cubic-bezier(.2, 1.6, .4, 1) backwards; --rr: 10deg; }
+    .handle { animation: stempel .45s .95s cubic-bezier(.2, 1.5, .4, 1) backwards; }
+    .bio { animation: naik .5s 1.05s ease-out backwards; }
+    footer { animation: naik .5s 1.7s ease-out backwards; }
+    .selotip { animation: tarik .35s 1.55s ease-out backwards; }
+    .stiker { animation: tampar .45s 1.6s cubic-bezier(.2, 1.8, .4, 1) backwards, goyang 2.6s 2.4s ease-in-out infinite; }
+    @keyframes turun { from { translate: 0 -100%; } }
+    @keyframes tumbuh { from { scale: 0; opacity: 0; } }
+    @keyframes lempar { from { translate: var(--dx) var(--dy); rotate: 160deg; opacity: 0; } }
+    @keyframes jatuh { from { translate: 0 -220px; rotate: -18deg; } }
+    @keyframes putar { from { rotate: -90deg; scale: .6; } }
+    @keyframes kata { from { translate: 0 -40px; rotate: var(--rr); scale: 1.4; opacity: 0; } }
+    @keyframes stempel { from { scale: 2.2; rotate: 14deg; opacity: 0; } }
+    @keyframes naik { from { translate: 0 12px; opacity: 0; } }
+    @keyframes tarik { from { scale: 0 1; } }
+    @keyframes tampar { from { scale: 2.4; opacity: 0; } }
+    @keyframes goyang { 0%, 86%, 100% { rotate: 0deg; } 90% { rotate: -6deg; } 94% { rotate: 5deg; } }
+    .muncul { animation: tempel .55s cubic-bezier(.2, 1.4, .4, 1) backwards; animation-delay: calc(var(--i, 0) * 110ms + 1.2s); }
+    @keyframes tempel { from { opacity: 0; transform: translateY(16px) rotate(var(--r, 0deg)) scale(.96); } to { opacity: 1; transform: rotate(var(--r, 0deg)); } }
+  }
+  @media (prefers-reduced-motion: reduce) { .avatar img { animation: none; } }
+</style>
+</head>
+<body>
+
+<header class="kepala">
+  <span class="potong a"></span><span class="potong b"></span><span class="potong c"></span>
+  <div class="profil">
+    <div class="avatar"><img src="bara.jpg" width="148" height="148" alt="Foto profil Bara, ilustrasi kertas HRD berkemeja putih dan dasi navy"></div>
+    <h1><span class="kata k1">Bara</span><span class="garis">|</span><span class="kata k2">Kata HRD</span></h1>
+    <a class="handle" href="https://www.instagram.com/baracarikerja/" target="_blank" rel="noopener">@baracarikerja</a>
+    <p class="bio">Gue HRD. Gue kasih tahu apa yang dicari HR, biar lamaran lo nggak cuma lewat.</p>
+  </div>
+</header>
+
+<main id="daftar"></main>
+
+<footer><a href="https://www.instagram.com/baracarikerja/" target="_blank" rel="noopener">@baracarikerja</a></footer>
+
+<script>
+/* ============================================================
+   UBAH LINK DI SINI
+   - utama: true  -> kartu besar coral di paling atas
+   - stiker       -> tulisan kecil kuning di pojok (opsional)
+   - grup         -> judul kelompok (link dengan grup sama dikumpulkan)
+   - ikon         -> magang | loker | cv | info | ig | tiktok
+   ============================================================ */
+const LINKS = [
+  {
+    utama: true,
+    stiker: "TUTUP 4 NOV",
+    ikon: "magang",
+    judul: "Lowongan magang yang cocok buat lo",
+    sub: "Cari magang sesuai jurusan lo",
+    url: "https://ada4career.com/program/maganghub-batch-3?utm_source=ig_bara_cari_talent&utm_campaign=maganghub-batch-3",
+  },
+  {
+    ikon: "cv",
+    judul: "Bikin lamaran lo dilirik HR",
+    sub: "CV Tailor dan tools lain dari ADACareer",
+    url: "https://s.id/loker-bara",
+  },
+];
+
+const IKON = {
+  magang: '<path d="M3 9l9-5 9 5-9 5-9-5z"/><path d="M7 11.5V16c0 1.5 2.2 3 5 3s5-1.5 5-3v-4.5"/><path d="M21 9v5"/>',
+  loker: '<rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"/><path d="M3 13h18"/>',
+  cv: '<path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 17h4"/>',
+  info: '<circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.01"/>',
+  ig: '<rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5v.01"/>',
+  tiktok: '<path d="M14 3v11a4 4 0 1 1-4-4"/><path d="M14 3c.5 2.5 2.5 4.5 5 5"/>',
+};
+const WARNA = { magang: "#C9573C", loker: "#2C3550", cv: "#4E9A5B", info: "#B5533C", ig: "#8E3B29", tiktok: "#2B2B2B" };
+
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+const main = document.getElementById("daftar");
+let html = "", grupAktif = null, i = 0;
+for (const l of LINKS) {
+  if (l.grup && l.grup !== grupAktif) { html += `<h2 class="label muncul" style="--i:${i++}">${esc(l.grup)}</h2>`; }
+  grupAktif = l.grup || grupAktif;
+  html += `<a class="link muncul${l.utama ? " utama" : ""}" style="--i:${i++};--warna:${WARNA[l.ikon] || "#2C3550"}" href="${esc(l.url)}" target="_blank" rel="noopener">
+    ${l.utama ? '<span class="selotip"></span>' : ""}
+    ${l.stiker ? `<span class="stiker">${esc(l.stiker)}</span>` : ""}
+    <span class="ikon"><svg viewBox="0 0 24 24" aria-hidden="true">${IKON[l.ikon] || IKON.info}</svg></span>
+    <span class="teks"><span class="judul">${esc(l.judul)}</span>${l.sub ? `<span class="sub">${esc(l.sub)}</span>` : ""}</span>
+    <svg class="panah" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+  </a>`;
+}
+main.innerHTML = html;
+</script>
+</body>
+</html>
