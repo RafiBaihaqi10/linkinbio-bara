@@ -231,22 +231,22 @@
    - utama: true  -> kartu besar coral di paling atas
    - stiker       -> tulisan kecil kuning di pojok (opsional)
    - grup         -> judul kelompok (link dengan grup sama dikumpulkan)
-   - ikon         -> magang | loker | cv | info | ig | tiktok
+   - ikon         -> magang | loker | cv | gaji | info | ig | tiktok
    ============================================================ */
 const LINKS = [
   {
     utama: true,
-    stiker: "TUTUP 4 NOV",
-    ikon: "magang",
-    judul: "Lowongan magang yang cocok buat lo",
-    sub: "Cari magang sesuai jurusan lo",
-    url: "https://ada4career.com/maganghub?utm_source=ig_bara_cari_talent&utm_campaign=maganghub-batch-3",
+    ikon: "loker",
+    judul: "Akses ribuan loker, gratis",
+    sub: "Cari lowongan yang cocok buat lo",
+    url: "https://s.id/loker-bara",
   },
   {
-    ikon: "cv",
-    judul: "Bikin lamaran lo dilirik HR",
-    sub: "CV Tailor dan tools lain dari ADACareer",
-    url: "https://s.id/loker-bara",
+    grup: "Tools gratis",
+    ikon: "gaji",
+    judul: "Kalkulator gaji bersih",
+    sub: "Gaji di loker vs yang masuk rekening",
+    url: "https://ada4career.com/tools/kalkulator-gaji-bersih?utm_source=ig_bara_cari_talent&utm_campaign=gaji-bersih",
   },
 ];
 
@@ -254,11 +254,12 @@ const IKON = {
   magang: '<path d="M3 9l9-5 9 5-9 5-9-5z"/><path d="M7 11.5V16c0 1.5 2.2 3 5 3s5-1.5 5-3v-4.5"/><path d="M21 9v5"/>',
   loker: '<rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"/><path d="M3 13h18"/>',
   cv: '<path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 17h4"/>',
+  gaji: '<rect x="5" y="3" width="14" height="18" rx="2"/><path d="M8 7h8"/><path d="M8 11.5h.01M12 11.5h.01M16 11.5h.01M8 15h.01M12 15h.01M16 15h.01M8 18.5h.01M12 18.5h.01M16 18.5h.01"/>',
   info: '<circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.01"/>',
   ig: '<rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5v.01"/>',
   tiktok: '<path d="M14 3v11a4 4 0 1 1-4-4"/><path d="M14 3c.5 2.5 2.5 4.5 5 5"/>',
 };
-const WARNA = { magang: "#C9573C", loker: "#2C3550", cv: "#4E9A5B", info: "#B5533C", ig: "#8E3B29", tiktok: "#2B2B2B" };
+const WARNA = { magang: "#C9573C", loker: "#2C3550", cv: "#4E9A5B", gaji: "#5E7A6B", info: "#B5533C", ig: "#8E3B29", tiktok: "#2B2B2B" };
 
 const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
 const main = document.getElementById("daftar");
